@@ -35,7 +35,6 @@ var BusLine=function (bus_map,bus_stations,bus_line_points) {
                 this.bus_stations.push(temp_marker);
                 bus_map.addOverlay(temp_marker);
                 }
-            console.log("the num of stations is 0");
             }
     };
     this.get_stations=function (){

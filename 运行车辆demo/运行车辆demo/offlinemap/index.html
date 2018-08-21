@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>百度地图离线示例</title>
+    <!--注意js外部文件加载顺序不要随意更改-->
+    <script src="map_load.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="tools/AreaRestriction_min.js"></script>
+    <script src="tools/BMapLib_GeoUtils.js"></script>
+    <script src="LuShu_min.js"></script>
+    <script src="BusLine.js"></script>
+    <script src="js/echarts.js"></script>
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="js/layer/skin/layer.css">
+    <style type="text/css">
+        /*隐藏logo*/
+        .anchorBL{display:none;}
+        html,body,#map{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        #control{
+            bottom: 10px;
+            right: 10px;
+            top: auto;
+            left: auto;
+            white-space: nowrap;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            text-size-adjust: none;
+        }
+        .layui-layer-btn0{
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<!--echart图表绘制区-->
+<div id="speed_table"style="position:fixed;overflow: hidden;width: 800px;height: 580px;left: 0%;padding: 0px;margin: 0px;border-width: 0px;cursor: default;bottom: -25%;"></div>
+<div id="control">
+    <button class="layui-layer-btn0" id="return_center" onclick="return_center()">回归</button>
+    <button class="layui-layer-btn0" id="start_run" onclick="start_run()">启动</button>
+    <button class="layui-layer-btn0" id="pause"onclick="bus_pause()">暂停</button>
+    <button class="layui-layer-btn0" id="stop" onclick="bus_stop()">停止</button>
+    <button class="layui-layer-btn0" id="add_bus"onclick="add_bus()">添加车辆</button>
+    <button class="layui-layer-btn0" id="hide_button" onclick="hide_div()">隐藏按钮</button>
+</div>
+</body>
+<script src="main.js"></script>
+<script src="main_chart.js"></script>
+</html>

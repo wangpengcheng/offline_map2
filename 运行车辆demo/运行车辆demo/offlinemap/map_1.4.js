@@ -2617,7 +2617,7 @@ window.BMAP_AUTHENTIC_KEY = "offlinekey";
             if (!point2) return 0;
             x2 = this.toRadians(point2["lng"]);
             y2 = this.toRadians(point2["lat"]);
-            return this.getDistance(x1, x2, y1, y2)
+            return this.getDistance()
         },
         getDistanceByLL: function(point1, point2) {
             if (!point1 || !point2) return 0;
@@ -2630,7 +2630,7 @@ window.BMAP_AUTHENTIC_KEY = "offlinekey";
             y1 = this.toRadians(point1["lat"]);
             x2 = this.toRadians(point2["lng"]);
             y2 = this.toRadians(point2["lat"]);
-            return this.getDistance(x1, x2, y1, y2)
+            return this.getDistance()
         },
         convertMC2LL: function(point) {
             var temp, factor;

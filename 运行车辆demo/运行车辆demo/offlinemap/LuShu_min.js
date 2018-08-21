@@ -182,7 +182,7 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
             return
         }
         this._map = g;//地图对象
-        this._path = f;//路径
+        this._path = [].concat(f);//路径
         this.i = 0;//记录当前位置坐标
         this._setTimeoutQuene = [];//设置时间外队列
         this._projection = this._map.getMapType().getProjection();//返回地图类型所使用的投影实例Projection
@@ -284,7 +284,7 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
             e.setZIndex(0);
             this._map.addOverlay(e);
             //设置marker起跳动画
-           //e.setAnimation(BMAP_ANIMATION_DROP);
+            //e.setAnimation(BMAP_ANIMATION_DROP);
             this._marker = e
         },
         _addInfoWin: function() {
@@ -387,10 +387,10 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
             var f = this;
             if (e < this._path.length - 1) {
                 f._move(f._path[e], f._path[e + 1], f._tween.linear)
-              //  console.log(e);
+                //  console.log(e);
             }else if(e==this._path.length-1){//判断是否到终点实现循环调用
                 if(this._opts.isCircle){
-                   //console.log(f.i);
+                    //console.log(f.i);
                     f.change_path();
                     this.start();//再次运行；
                     //更改车辆iocn使得车辆翻转
@@ -457,6 +457,16 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
                 }
             }
             return - 1  //返回-1
+        },
+        //扩展路书函数输出车辆当前位置
+        get_position:function() {
+            var f=this;
+            var Bus_Marker = this._marker;
+            if (Bus_Marker== null) {
+                layer.msg("<h1>请添加车辆</h1>");
+            } else if (Bus_Marker.getPosition() != null) {
+                return Bus_Marker.getPosition();
+            }
         }
     });
     //构造函数添加_point和_html
@@ -522,7 +532,7 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
     //设置是否循环
     c.prototype.set_circle=function () {
         this._opts.isCircle=!this._opts.isCircle;
-    }
+    },
     c.prototype.change_iocn=function (f) {
         this._marker.setIcon(f);
     }
@@ -531,7 +541,7 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
 
     //首先更改_nextmove，让其变为单点运动
     c.prototype.bus_move_next=function () {
-        
+
     }
     */
     //设置函数实现对象的拷贝
