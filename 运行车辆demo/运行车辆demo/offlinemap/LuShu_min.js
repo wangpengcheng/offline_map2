@@ -189,7 +189,7 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
         this._opts = {//设置参数
             icon: null,//icon1
             icon1:null,//icon2
-            speed: 4000,//速度
+            speed: 20,//速度
             defaultContent: "",//行驶过程中的显示字符
             isCircle:true//是否循环显示
         };
@@ -410,9 +410,9 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
                 return
             }
             f._overlay.setPosition(g, f._marker.getIcon().size);
-            var e = f._troughPointIndex(g);
-            if (e != -1) {
-                clearInterval(f._intervalFlag);
+            var e = f._troughPointIndex(g);//判断是否到达站点，不是则返回1
+            if (e != -1) {//如果到达站点
+                clearInterval(f._intervalFlag);//停止正常行驶动画
                 f._overlay.setHtml(f._opts.landmarkPois[e].html);
                 f._overlay.setPosition(g, f._marker.getIcon().size);
                 f._pauseForView(e)
@@ -444,15 +444,16 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
                 return l * g / k + e
             }
         },
-        _troughPointIndex: function(f) {//输入目标位置
+        _troughPointIndex: function(f) {//输入当前位置坐标，临近站点就返回站点坐标，否则返回-1
             var h = this._opts.landmarkPois,
                 j;
             for (var g = 0, e = h.length; g < e; g++) {
-                if (!h[g].bShow) {
+                if (!h[g].bShow) {//设置是否显示站点
                     j = this._map.getDistance(new BMap.Point(h[g].lng, h[g].lat), f);//获取目标位置与目标位置距离
                     if (j < 10) {//如果距离小于10则显示路过站点信息
                         h[g].bShow = true;
-                        return g //返回站点次序坐标
+                        return g//返回站点次序坐标
+                        console.log(g);//打印站点次序
                     }
                 }
             }
@@ -528,14 +529,14 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
     //反转线路
     c.prototype.change_path=function(){
         this._path.reverse();
-    }
+    };
     //设置是否循环
     c.prototype.set_circle=function () {
         this._opts.isCircle=!this._opts.isCircle;
-    },
+    };
     c.prototype.change_iocn=function (f) {
         this._marker.setIcon(f);
-    }
+    };
     /*
     luShu拓展：此函数用于获取车辆坐标并实现实时定位
 

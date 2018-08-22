@@ -1,17 +1,20 @@
-var dom = document.getElementById("speed_table");
-//dom.style.width=document.documentElement.clientWidth-250;
-var speedChart = echarts.init(dom);
+//设置瞬时速度图
+var speed_chart_dom = document.getElementById("speed_table");
+//speed_chart_dom.style.width=document.documentElement.clientWidth-250;
+var speed_chart = echarts.init(speed_chart_dom);
 var app = {};
 option = null;
-option = {
+//设置表格样式
+speed_cahart_option = {
     tooltip : {
         formatter: "{a} <br/>{c} {b}"
     },
     toolbox: {
         show: true,
         feature: {
-            restore: {show: true},
-            saveAsImage: {show: true}
+            //magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
         }
     },
     series : [
@@ -218,7 +221,6 @@ option = {
         }
     ]
 };
-
 //函数获取路书汽车坐标计算速度和加速度显示在仪表盘中
 function show_speed(lushu,time){
     //记录前一个坐标点
@@ -252,20 +254,19 @@ function show_speed(lushu,time){
             }
 
             //设置显示仪表盘
-            option.series[0].data[0].value =temp_speed+Math.random()*2;// (Math.random()*100).toFixed(2) - 0;
-            option.series[1].data[0].value =(temp_speed/10+Math.random()*2).toFixed(4)-0;
+            speed_cahart_option.series[0].data[0].value =temp_speed+Math.random()*2;// (Math.random()*100).toFixed(2) - 0;
+            speed_cahart_option.series[1].data[0].value =(temp_speed/10+Math.random()*2).toFixed(4)-0;
             if(temp_gas<=0||temp_water<=0){
                 console.log("Gas Or Water RUN OUT");
                 //To-do
             }else {
-                option.series[2].data[0].value = temp_water;
-                option.series[3].data[0].value = temp_gas;
+                speed_cahart_option.series[2].data[0].value = temp_water;
+                speed_cahart_option.series[3].data[0].value = temp_gas;
             }
-            speedChart.setOption(option,true);
+            speed_chart.setOption(speed_cahart_option,true);
             temp_count++;
         }
     },time)
-}
-if (option && typeof option === "object") {
-    speedChart.setOption(option, true);
-}
+};
+
+//利用百度map设置热力图

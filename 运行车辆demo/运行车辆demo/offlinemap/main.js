@@ -7,7 +7,7 @@ map.addControl(new BMap.NavigationControl());   //缩放按钮
 layer.msg('<h1>欢迎使用地图监控</h1>');
 //设置中心点
 var center_point=new BMap.Point(104.0064480000,30.5624560000);
-map.centerAndZoom(center_point, 18);  // 初始化地图,设置中心点坐标和地图级别
+map.centerAndZoom(center_point, 19);  // 初始化地图,设置中心点坐标和地图级别
 /*
 *设置地图缩放级别限制
 */
