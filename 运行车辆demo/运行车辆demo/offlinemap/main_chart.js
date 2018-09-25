@@ -254,8 +254,13 @@ function show_speed(lushu,time){
             }
 
             //设置显示仪表盘
-            speed_cahart_option.series[0].data[0].value =temp_speed+Math.random()*2;// (Math.random()*100).toFixed(2) - 0;
-            speed_cahart_option.series[1].data[0].value =(temp_speed/10+Math.random()*2).toFixed(4)-0;
+            //检查是数据是否有误
+            if(temp_speed>=0&&temp_speed<=80){
+                speed_cahart_option.series[0].data[0].value =temp_speed+Math.random()*2;// (Math.random()*100).toFixed(2) - 0;
+                speed_cahart_option.series[1].data[0].value =(temp_speed/10+Math.random()*2).toFixed(4)-0;
+            }else {
+                console.log("显示", "速度超标");
+            }
             if(temp_gas<=0||temp_water<=0){
                 console.log("Gas Or Water RUN OUT");
                 //To-do
@@ -263,10 +268,290 @@ function show_speed(lushu,time){
                 speed_cahart_option.series[2].data[0].value = temp_water;
                 speed_cahart_option.series[3].data[0].value = temp_gas;
             }
-            speed_chart.setOption(speed_cahart_option,true);
+            speed_chart.setOption(speed_cahart_option);
             temp_count++;
         }
     },time)
+    //speed_auto_chart.setOption(speed_auto_option,true);
+};
+//设置动态数据显示
+var speed_auto_show_dom=document.getElementById("speed_auto_show");
+var speed_auto_chart=echarts.init(speed_auto_show_dom);
+
+var speed_auto_option={
+    title: {
+        text: '车辆速度显示',
+        subtext: '实时车辆数据显示'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+                backgroundColor: '#283b56'
+            }
+        }
+    },
+    legend: {
+        data:['车辆速度', '加速度']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    dataZoom: {
+        show: false,
+        start: 0,
+        end: 100
+    },
+    xAxis: [
+        {
+            type: 'category',
+            boundaryGap: true,
+            data: (function (){
+                var now = new Date();
+                var res = [];
+                var len = 10;
+                while (len--) {//显示时间间隔为2s的数据
+                    res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                    now = new Date(now - 2000);
+                }
+                return res;
+            })()
+        },
+        {
+            type: 'category',
+            boundaryGap: true,
+            data: (function (){
+                var now = new Date();
+                var res = [];
+                var len = 10;
+                while (len--) {//显示时间间隔为2s的数据
+                    res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                    now = new Date(now - 2000);
+                }
+                return res;
+            })()
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            scale: true,
+            name: '加速度',
+            max: 30,
+            min: 0,
+            boundaryGap: [0.2, 0.2]
+        },
+        {
+            type: 'value',
+            scale: true,
+            name: '车辆速度',
+            max: 1200,
+            min: 0,
+            boundaryGap: [0.2, 0.2]
+        }
+    ],
+    series: [
+        {
+            name:'加速度',
+            type:'bar',
+            xAxisIndex: 1,
+            yAxisIndex: 1,
+            data:(function (){
+                var res = [];
+                var len = 10;
+                while (len--) {
+                    res.push(Math.round(Math.random() * 1000));
+                }
+                return res;
+            })()
+        },
+        {
+            name:'车辆速度',
+            type:'line',
+            data:(function (){
+                var res = [];
+                var len = 0;
+                while (len < 10) {
+                    res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                    len++;
+                }
+                return res;
+            })()
+        }
+    ]
 };
 
-//利用百度map设置热力图
+app.count = 11;
+function ShowSpeedLineChart() {
+    setInterval(function (){
+        var axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+        var data0 = speed_auto_option.series[0].data;
+        var data1 = speed_auto_option.series[1].data;
+        data0.shift();
+        data0.push(Math.round(Math.random() * 1000));
+        data1.shift();
+        data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+
+        speed_auto_option.xAxis[0].data.shift();
+        speed_auto_option.xAxis[0].data.push(axisData);
+        speed_auto_option.xAxis[1].data.shift();
+        speed_auto_option.xAxis[1].data.push(app.count++);
+
+        speed_auto_chart.setOption(speed_auto_option);
+    }, 2100);
+}
+
+
+
+
+var points =[
+    {"lng":104.002890,"lat":30.559616,"count":50},
+    {"lng":104.002760,"lat":30.559888,"count":51},
+    {"lng":104.002293,"lat":30.560615,"count":15},
+    {"lng":104.001601,"lat":30.560921,"count":40},
+    {"lng":104.008843,"lat":30.575516,"count":100},
+    {"lng":104.00546,"lat":30.578503,"count":6},
+    {"lng":104.003289,"lat":30.579989,"count":18},
+    {"lng":104.008162,"lat":30.575051,"count":80},
+    {"lng":104.002039,"lat":30.57782,"count":11},
+    {"lng":104.00387,"lat":30.577253,"count":7},
+    {"lng":104.00773,"lat":30.579426,"count":42},
+    {"lng":104.001107,"lat":30.576445,"count":4},
+    {"lng":104.001301,"lat":30.577943,"count":27},
+    {"lng":104.001301,"lat":30.560836,"count":23},
+    {"lng":104.001301,"lat":30.57463,"count":60},
+    {"lng":104.005424,"lat":30.564675,"count":8},
+    {"lng":104.009242,"lat":30.574509,"count":15},
+    {"lng":104.002766,"lat":30.561408,"count":25},
+    {"lng":104.001674,"lat":30.564396,"count":21},
+    {"lng":104.007268,"lat":30.56267,"count":1},
+    {"lng":104.001732,"lat":30.560034,"count":51},
+    {"lng":104.001732,"lat":30.56667,"count":7},
+    {"lng":104.001732,"lat":30.579114,"count":11},
+    {"lng":104.001732,"lat":30.561611,"count":35},
+    {"lng":104.001732,"lat":30.561037,"count":22},
+    {"lng":104.009336,"lat":30.561134,"count":4},
+    {"lng":104.003557,"lat":30.563254,"count":5},
+    {"lng":104.008367,"lat":30.56943,"count":3},
+    {"lng":104.004312,"lat":30.579621,"count":100},
+    {"lng":104.003874,"lat":30.579447,"count":87},
+    {"lng":104.007162,"lat":30.563091,"count":32},
+    {"lng":104.007162,"lat":30.561854,"count":44},
+    {"lng":104.007162,"lat":30.568227,"count":21},
+    {"lng":104.006426,"lat":30.562286,"count":80},
+    {"lng":104.001597,"lat":30.57948,"count":32},
+    {"lng":104.003895,"lat":30.560787,"count":26},
+    {"lng":104.003563,"lat":30.561197,"count":17},
+    {"lng":104.007162,"lat":30.562547,"count":17},
+    {"lng":104.006126,"lat":30.561938,"count":25},
+    {"lng":104.007162,"lat":30.575782,"count":100},
+    {"lng":104.009239,"lat":30.576759,"count":39},
+    {"lng":104.007185,"lat":30.569123,"count":11},
+    {"lng":104.007237,"lat":30.567518,"count":9},
+    {"lng":104.007784,"lat":30.575754,"count":47},
+    {"lng":104.000193,"lat":30.577061,"count":52},
+    {"lng":104.007162,"lat":30.575619,"count":100},
+    {"lng":104.008495,"lat":30.575958,"count":46},
+    {"lng":104.006292,"lat":30.561166,"count":9},
+    {"lng":104.009916,"lat":30.564055,"count":8},
+    {"lng":104.00189,"lat":30.561308,"count":11},
+    {"lng":104.003765,"lat":30.569376,"count":3},
+    {"lng":104.008232,"lat":30.560348,"count":50},
+    {"lng":104.007162,"lat":30.560511,"count":15},
+    {"lng":104.008568,"lat":30.578161,"count":23},
+    {"lng":104.003461,"lat":30.566306,"count":3},
+    {"lng":104.00232,"lat":30.56161,"count":13},
+    {"lng":104.0074,"lat":30.568616,"count":6},
+    {"lng":104.004679,"lat":30.575499,"count":21},
+    {"lng":104.007162,"lat":30.575738,"count":29},
+    {"lng":104.007836,"lat":30.576998,"count":99},
+    {"lng":104.000755,"lat":30.568001,"count":10},
+    {"lng":104.004077,"lat":30.560655,"count":14},
+    {"lng":104.006092,"lat":30.562995,"count":16},
+    {"lng":104.00535,"lat":30.561054,"count":15},
+    {"lng":104.003022,"lat":30.561895,"count":13},
+    {"lng":104.009462,"lat":30.573373,"count":17},
+    {"lng":104.001191,"lat":30.566572,"count":1},
+    {"lng":104.009612,"lat":30.577119,"count":9},
+    {"lng":104.008237,"lat":30.561337,"count":54},
+    {"lng":104.003776,"lat":30.561919,"count":26},
+    {"lng":104.007694,"lat":30.56536,"count":17},
+    {"lng":104.005377,"lat":30.574137,"count":19},
+    {"lng":104.007434,"lat":30.574394,"count":43},
+    {"lng":104.00588,"lat":30.562622,"count":27},
+    {"lng":104.008345,"lat":30.579467,"count":8},
+    {"lng":104.006883,"lat":30.577171,"count":3},
+    {"lng":104.003877,"lat":30.576659,"count":34},
+    {"lng":104.005712,"lat":30.575613,"count":14},
+    {"lng":104.009869,"lat":30.561416,"count":12},
+    {"lng":104.006956,"lat":30.565377,"count":11},
+    {"lng":104.00066,"lat":30.565017,"count":38},
+    {"lng":104.006244,"lat":30.560215,"count":91},
+    {"lng":104.00929,"lat":30.575908,"count":54},
+    {"lng":104.002116,"lat":30.579658,"count":21},
+    {"lng":104.009462,"lat":30.565015,"count":15},
+    {"lng":104.001969,"lat":30.573527,"count":3},
+    {"lng":104.009462,"lat":30.561854,"count":24},
+    {"lng":104.00905,"lat":30.569217,"count":12},
+    {"lng":104.004579,"lat":30.574987,"count":57},
+    {"lng":104.009462,"lat":30.575251,"count":70},
+    {"lng":104.005867,"lat":30.578989,"count":8}];
+
+if(!isSupportCanvas()){
+    alert('热力图目前只支持有canvas支持的浏览器,您所使用的浏览器不能使用热力图功能~')
+}
+//详细的参数,可以查看heatmap.js的文档 https://github.com/pa7/heatmap.js/blob/master/README.md
+//参数说明如下:
+/* visible 热力图是否显示,默认为true
+ * opacity 热力的透明度,1-100
+ * radius 势力图的每个点的半径大小
+ * gradient  {JSON} 热力图的渐变区间 . gradient如下所示
+ *	{
+        .2:'rgb(0, 255, 255)',
+        .5:'rgb(0, 110, 255)',
+        .8:'rgb(100, 0, 255)'
+    }
+    其中 key 表示插值的位置, 0~1.
+        value 为颜色值.
+ */
+heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+map.addOverlay(heatmapOverlay);
+heatmapOverlay.setDataSet({data:points,max:100});
+//是否显示热力图
+function openHeatmap(){
+    heatmapOverlay.show();
+}
+function closeHeatmap(){
+    heatmapOverlay.hide();
+}
+//closeHeatmap();
+//openHeatmap();
+function setGradient(){
+    /*格式如下所示:
+   {
+         0:'rgb(102, 255, 0)',
+         .5:'rgb(255, 170, 0)',
+         1:'rgb(255, 0, 0)'
+   }*/
+    var gradient = {};
+    var colors = document.querySelectorAll("input[type='color']");
+    colors = [].slice.call(colors,0);
+    colors.forEach(function(ele){
+        gradient[ele.getAttribute("data-key")] = ele.value;
+    });
+    heatmapOverlay.setOptions({"gradient":gradient});
+}
+
+closeHeatmap();
+//判断浏览区是否支持canvas
+function isSupportCanvas(){
+    var elem = document.createElement('canvas');
+    return !!(elem.getContext && elem.getContext('2d'));
+}

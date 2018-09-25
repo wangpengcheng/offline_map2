@@ -103,7 +103,7 @@ bus_station_icon = new BMap.Icon("images/self_img/bus_station.png", new BMap.Siz
     imageSize:new BMap.Size(64,64)
 });
 //公交车iocn1、2
-run_bus_iocn=new BMap.Icon("images/self_img/6.png", new BMap.Size(128,128), {
+run_bus_iocn =new BMap.Icon("images/self_img/6.png", new BMap.Size(128,128), {
     anchor:new BMap.Size(64,64),
     imageSize:new BMap.Size(128,128)
 });
@@ -219,7 +219,8 @@ function add_bus() {
    // compute_speed(temp_lushu,1000);
     //console.log(temp_lushu.get_return_path());
    // temp_lushu.compute_speed(1000);
-    show_speed(temp_lushu,2000);
+    //显示速度
+    //show_speed(temp_lushu,2000);
 }
 //隐藏按钮
 var is_hide=false,temp_opa=1;
@@ -249,6 +250,11 @@ function  return_center() {
     //map.panTo(center_point);
     //计算速度
 }
+//显示热力地图
+function ShowHotMap(){
+    openHeatmap();
+}
+//显示仪表和速度
 function compute_speed(lushu,time){
         //记录前一个坐标点
         var temp_opsition1=null;
@@ -268,3 +274,36 @@ function compute_speed(lushu,time){
 /*
 * 基本操作已经完成接下来进行绘制图表
 * */
+//页面加载完成后操作
+var IsShowHotMap=false;//统计点击次数
+//给按钮绑定事件
+$("#show_hotmap").click(function () {
+    if(IsShowHotMap==false){
+        openHeatmap();
+        this.innerText="隐藏热力图";
+        IsShowHotMap=true;
+    }else {
+        closeHeatmap();
+        this.innerText="显示热力地图";
+        IsShowHotMap=false;
+    }
+});
+//设置按钮显示车辆状态
+var IsShowSpeedCharts=false;
+$("show_bus_state").click(
+    function () {
+        if(IsShowSpeedCharts==false){
+            ShowSpeedLineChart();
+            show_speed(lushu_array[0],2000);
+            IsShowSpeedCharts=true;
+           // this.innerText="隐藏速度图像"
+        }else {
+           // this.innerText="";
+            //ToDo
+        }
+    }
+);
+//设置节点可拖动
+$( "#speed_table" ).css(
+"position","fixed"
+).draggable();

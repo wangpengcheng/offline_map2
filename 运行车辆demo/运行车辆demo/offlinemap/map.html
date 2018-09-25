@@ -13,8 +13,11 @@
     <script src="LuShu_min.js"></script>
     <script src="BusLine.js"></script>
     <script src="js/echarts.js"></script>
+    <script src="tools/heatmap.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <link rel="stylesheet" href="css/map.css">
-    <link rel="stylesheet" href="js/layer/skin/layer.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
     <style type="text/css">
         /*隐藏logo*/
         .anchorBL{display:none;}
@@ -43,6 +46,7 @@
 <div id="map"></div>
 <!--echart图表绘制区-->
 <div id="speed_table"style="position:fixed;overflow: hidden;width: 800px;height: 580px;left: 0%;padding: 0px;margin: 0px;border-width: 0px;cursor: default;bottom: -25%;"></div>
+<div id="speed_auto_show" style="position:fixed;overflow: hidden;width: 800px;height: 580px;"></div>
 <div id="control">
     <button class="layui-layer-btn0" id="return_center" onclick="return_center()">回归</button>
     <button class="layui-layer-btn0" id="start_run" onclick="start_run()">启动</button>
@@ -50,6 +54,8 @@
     <button class="layui-layer-btn0" id="stop" onclick="bus_stop()">停止</button>
     <button class="layui-layer-btn0" id="add_bus"onclick="add_bus()">添加车辆</button>
     <button class="layui-layer-btn0" id="hide_button" onclick="hide_div()">隐藏按钮</button>
+    <button class="layui-layer-btn0" id="show_hotmap">显示热力地图</button>
+    <button class="layui-layer-btn0" id="show_bus_state">显示车辆状态</button>
 </div>
 </body>
 <script src="main.js"></script>
