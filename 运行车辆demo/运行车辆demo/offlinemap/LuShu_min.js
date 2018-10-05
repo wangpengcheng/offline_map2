@@ -176,6 +176,23 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
             return g
         }
     })();
+
+    //设置clone函数方便深层拷贝
+    var clone = function (obj) {
+        if(obj === null) return null;
+        if(typeof obj !== 'object') return obj;//非对象直接返回
+        if(obj.constructor===Date) return new Date(obj);
+        if(obj.constructor === RegExp) return new RegExp(obj);
+        var newObj = new obj.constructor ();  //保持继承链
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {   //不遍历其原型链上的属性
+                var val = obj[key];
+                newObj[key] = typeof val === 'object' ? clone(val) : val; // 使用clone递归
+               // newObj[key] = typeof val === 'object' ? arguments.callee(val) : val;// 使用arguments.callee解除与函数名的耦合
+            }
+        }
+        return newObj;
+    };
     //路书
     var c = BMapLib.LuShu = function(g, f, e) {
         if (!f || f.length < 1) {
@@ -206,11 +223,15 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
     c.prototype._setOptions = function(e) {//设置参数
         if (!e) {//空则返回
             return
-        }
+        }else {
+
+        //共用了一块内存
         for (var f in e) {//遍历输入参数
             if (e.hasOwnProperty(f)) {  //判断e中是否有f(path)对象
-                this._opts[f] = e[f]//将e中设置参数拷贝到_opts中
+               //将e中设置参数深拷贝到_opts中e[f]
+                this._opts[f] =clone(e[f]);
             }
+        }
         }
     };
     //设置原型拓展的start方法
@@ -408,11 +429,13 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
             var f = this;
             if (!f._overlay) {
                 return
+                console.log("输出错误");
             }
             f._overlay.setPosition(g, f._marker.getIcon().size);
             var e = f._troughPointIndex(g);//判断是否到达站点，不是则返回1
             if (e != -1) {//如果到达站点
                 clearInterval(f._intervalFlag);//停止正常行驶动画
+                console.log("到达站点："+e);
                 f._overlay.setHtml(f._opts.landmarkPois[e].html);
                 f._overlay.setPosition(g, f._marker.getIcon().size);
                 f._pauseForView(e)
@@ -426,7 +449,7 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
                     g._moveNext(++g.i)
                 },
                 g._opts.landmarkPois[e].pauseTime * 1000);
-            g._setTimeoutQuene.push(f)
+            g._setTimeoutQuene.push(f);
         },
         _clearTimeout: function() {
             for (var e in this._setTimeoutQuene) {
@@ -452,8 +475,8 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
                     j = this._map.getDistance(new BMap.Point(h[g].lng, h[g].lat), f);//获取目标位置与目标位置距离
                     if (j < 10) {//如果距离小于10则显示路过站点信息
                         h[g].bShow = true;
-                        return g//返回站点次序坐标
-                        console.log(g);//打印站点次序
+                        console.log(h[g].bShow);//打印站点次序
+                        return g;//返回站点次序坐标
                     }
                 }
             }
