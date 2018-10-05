@@ -165,7 +165,7 @@ var lushu_option={
     isCircle:true//默认车辆循环运行
 };
 //定义路书
-var lushu = new BMapLib.LuShu(map, line_points,lushu_option);
+//var lushu = new BMapLib.LuShu(map, line_points,lushu_option);
 /*
 * 设置控制按钮控件
 * 1、动画暂停\继续
@@ -175,7 +175,7 @@ var lushu = new BMapLib.LuShu(map, line_points,lushu_option);
 * */
 //定义数组添加路书
 var lushu_array=[];
-lushu_array.push(lushu);
+//lushu_array.push(lushu);
 //隐藏按钮
 hide_div();
 
@@ -307,3 +307,45 @@ $("show_bus_state").click(
 $( "#speed_table" ).css(
 "position","fixed"
 ).draggable();
+
+/*
+* 实现键盘监听事件
+* 2018-10-5 15:02
+* 王鹏程
+* 利用jq的keydown函数监听键盘事件
+* */
+function SetKeyboardListener() {
+    $(document).keydown(function (event) {
+        var WindowEvent = event || window.event;
+        var k = WindowEvent.keyCode || WindowEvent.which;
+        //Ctrl+Alt+快捷键设置
+        if (WindowEvent.ctrlKey && WindowEvent.altKey) {
+            switch (k) {
+                case 82: //Ctrl+Alt+R 回归中心
+                    console.log("Ctrl+Alt+R:回归中心");
+                    return_center();
+                break;
+                case 83: //Ctrl+Alt+s 启动车辆
+                    console.log("Ctrl+Alt+S :启动车辆");
+                    start_run();
+                break;
+                case 80: // Ctrl+Alt+P 车辆暂停
+                    console.log("Ctrl+Alt+P:车辆暂停");
+                    bus_pause();
+                break;
+                case 65://  Ctrl+Alt+A:添加车辆
+                    console.log("Ctrl+Alt+A:添加车辆");
+                    add_bus();
+                break;
+                /*  //后续快捷键模板
+                case 65://  Ctrl+Alt+A:添加车辆
+                    console.log("Ctrl+Alt+A:车辆停止");
+                    bus_stop();
+                break;
+                */
+            }
+        }
+        //return  false;//抑制默认事件
+    })
+}
+SetKeyboardListener();
