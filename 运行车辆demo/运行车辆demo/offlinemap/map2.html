@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>百度地图离线示例</title>
+    <!--注意js外部文件加载顺序不要随意更改-->
+    <!-- elementUI引入样式 -->
+    <!--  <script src="js/index.js"></script>
+      <link rel="stylesheet" href="css/index.css">
+      <script src="js/vue.js"></script>-->
+    <script src="//unpkg.com/vue/dist/vue.js"></script>
+    <script src="//unpkg.com/element-ui@2.4.8/lib/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!--js文件加载-->
+    <script src="map_load.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="tools/AreaRestriction_min.js"></script>
+    <script src="tools/BMapLib_GeoUtils.js"></script>
+    <script src="LuShu_min.js"></script>
+    <script src="BusLine.js"></script>
+    <script src="js/echarts.js"></script>
+    <script src="tools/heatmap.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+    <style type="text/css">
+        /*隐藏logo*/
+        .anchorBL{display:none;}
+        html,body,#app,#map{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        #control{
+            bottom: 10px;
+            right: 10px;
+            top: auto;
+            left: auto;
+            white-space: nowrap;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            text-size-adjust: none;
+        }
+        .layui-layer-btn0{
+            font-size: 20pt;
+        }
+        .el-header, .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            text-align: center;
+            /*line-height: 160px;*/
+            width: 100%;
+            height: 100%;
+        }
+
+        body > .el-container {
+            margin-bottom: 40px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <!--echart图表绘制区
+    <div id="speed_table"style="position:fixed;overflow: hidden;width: 800px;height: 580px;left: 0%;padding: 0px;margin: 0px;border-width: 0px;cursor: default;bottom: -25%;"></div>
+    <div id="speed_auto_show" style="position:fixed;overflow: hidden;width: 800px;height: 580px;"></div>
+    -->
+                <div id="map"></div>
+</body>
+<script src="main.js"></script>
+<!--<script src="main_chart.js"></script>-->
+<script type="text/javascript">
+    new Vue().$mount('#app');
+</script>
+</html>

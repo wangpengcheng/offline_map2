@@ -228,8 +228,9 @@ function add_bus() {
     //console.log(temp_lushu.get_return_path());
    // temp_lushu.compute_speed(1000);
     //显示速度
-    //show_speed(temp_lushu,2000);
+    show_speed(temp_lushu,2000);
 }
+
 //隐藏按钮
 var is_hide=false,temp_opa=1;
 function hide_div() {
@@ -345,15 +346,20 @@ function SetKeyboardListener() {
                     console.log("Ctrl+Alt+A:添加车辆");
                     add_bus();
                 break;
-                /*  //后续快捷键模板
-                case 65://  Ctrl+Alt+A:添加车辆
-                    console.log("Ctrl+Alt+A:车辆停止");
-                    bus_stop();
+                case 66://  Ctrl+Alt+B:显示车辆状态
+                    console.log("Ctrl+Alt+B:显示车辆状态");
+                    $("#block").fadeToggle(2000);
                 break;
-                */
+                /*  //后续快捷键模板
+               case 65://  Ctrl+Alt+A:添加车辆
+                   console.log("Ctrl+Alt+A:车辆停止");
+                   bus_stop();
+               break;
+               */
             }
         }
         //return  false;//抑制默认事件
     })
 }
 SetKeyboardListener();
+

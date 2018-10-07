@@ -1,5 +1,6 @@
-/*@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";*/
-
+@import "http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+@import "https://daneden.github.io/animate.css/animate.min.css";
 /*-------------------------------*/
 /*           VARIABLES           */
 /*-------------------------------*/
@@ -28,16 +29,17 @@ html {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  padding-right: 0;
+  padding-left: 0;
   transition: all 0.5s ease;
 }
 #wrapper.toggled {
- /* padding-right: 220px;*/
+  padding-left: 220px;
 }
 #wrapper.toggled #sidebar-wrapper {
   width: 220px;
 }
 #wrapper.toggled #page-content-wrapper {
+  margin-right: -220px;
   position: absolute;
 }
 #sidebar-wrapper {
@@ -46,9 +48,8 @@ html {
   -webkit-transition: all 0.5s ease;
   background: #1a1a1a;
   height: 100%;
-  position: fixed;
-  right: 220px;
-  margin-right: -220px;
+  left: 220px;
+  margin-left: -220px;
   overflow-x: hidden;
   overflow-y: auto;
   transition: all 0.5s ease;
@@ -173,7 +174,6 @@ html {
   top: 20px;
   width: 32px;
   z-index: 999;
-  right: 20px;
 }
 .hamburger:hover {
   outline: none;
@@ -242,10 +242,6 @@ html {
   background-color: #ffffff;
   margin-top: -2px;
   top: 50%;
-  right: 240px;
-}
-.hamburger.is-open{
-  right:240px;
 }
 .hamburger.is-open .hamb-middle {
   background-color: #ffffff;

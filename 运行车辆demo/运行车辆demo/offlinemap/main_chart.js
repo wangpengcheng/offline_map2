@@ -283,6 +283,9 @@ var speed_auto_option={
         text: '车辆速度显示',
         subtext: '实时车辆数据显示'
     },
+    textStyle:{//设置文字大小
+        fontSize:16,
+    },
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -317,7 +320,7 @@ var speed_auto_option={
                 var res = [];
                 var len = 10;
                 while (len--) {//显示时间间隔为2s的数据
-                    res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                    res.unshift(now.toLocaleString('chinese', { hour12: false }).replace(/\d*\/\d*\/\d* /,''));
                     now = new Date(now - 2000);
                 }
                 return res;
@@ -331,7 +334,7 @@ var speed_auto_option={
                 var res = [];
                 var len = 10;
                 while (len--) {//显示时间间隔为2s的数据
-                    res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                    res.unshift(now.toLocaleString('chinese', { hour12: false }).replace(/\d*\/\d*\/\d* /,''));
                     now = new Date(now - 2000);
                 }
                 return res;
@@ -390,7 +393,7 @@ var speed_auto_option={
 app.count = 11;
 function ShowSpeedLineChart() {
     setInterval(function (){
-        var axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+        var axisData = (new Date()).toLocaleString('chinese', { hour12: false }).replace(/\d*\/\d*\/\d* /,'');
 
         var data0 = speed_auto_option.series[0].data;
         var data1 = speed_auto_option.series[1].data;
@@ -407,10 +410,6 @@ function ShowSpeedLineChart() {
         speed_auto_chart.setOption(speed_auto_option);
     }, 2100);
 }
-
-
-
-
 var points =[
     {"lng":104.002890,"lat":30.559616,"count":50},
     {"lng":104.002760,"lat":30.559888,"count":51},

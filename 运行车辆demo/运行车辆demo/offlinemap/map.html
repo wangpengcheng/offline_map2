@@ -5,6 +5,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>百度地图离线示例</title>
     <!--注意js外部文件加载顺序不要随意更改-->
+    <!-- elementUI引入样式
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/vue.js"></script>
+     -->
+    <!--js文件加载-->
     <script src="map_load.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/layer/layer.js"></script>
@@ -37,18 +43,31 @@
             z-index: 10;
             text-size-adjust: none;
         }
+        #block{
+            bottom: 10px;
+            right: 10px;
+            top: auto;
+            left: 10px;
+            cursor: pointer;
+            position: absolute;
+            width:auto;
+            height:500px;
+            overflow: hidden;
+            /*background-color: rgba(255, 148, 111, 0.18);*/
+            display:inline;
+        }
         .layui-layer-btn0{
             font-size: 20pt;
         }
     </style>
+
+
 </head>
 <body>
 <div id="map"></div>
-<!--echart图表绘制区
-<div id="speed_table"style="position:fixed;overflow: hidden;width: 800px;height: 580px;left: 0%;padding: 0px;margin: 0px;border-width: 0px;cursor: default;bottom: -25%;"></div>
-<div id="speed_auto_show" style="position:fixed;overflow: hidden;width: 800px;height: 580px;"></div>
--->
-<div id="control">
+<!--显示控制模块已经弃用，使用快捷键代替；请参考快捷键列表-->
+<!--
+    <div id="control">
     <button class="layui-layer-btn0" id="return_center" onclick="return_center()">回归</button>
     <button class="layui-layer-btn0" id="start_run" onclick="start_run()">启动</button>
     <button class="layui-layer-btn0" id="pause"onclick="bus_pause()">暂停</button>
@@ -57,8 +76,23 @@
     <button class="layui-layer-btn0" id="hide_button" onclick="hide_div()">隐藏按钮</button>
     <button class="layui-layer-btn0" id="show_hotmap">显示热力地图</button>
     <button class="layui-layer-btn0" id="show_bus_state">显示车辆状态</button>
+</div>-->
+
+<div id="block">
+    <!--echart图表绘制区-->
+    <div id="speed_table"style="overflow: hidden;width: 800px;height: 580px;float: left"></div>
+    <div id="speed_auto_show" style="overflow: hidden;width: 600px;height: 480px;float: left"></div>
+    <!--<div id="speed_table"style="overflow: hidden;left: 0%;padding: 0px;margin: 0px;border-width: 0px;cursor: default;bottom: 0%;"></div>-->
 </div>
 </body>
 <script src="main.js"></script>
-<!--<script src="main_chart.js"></script>-->
+<script src="main_chart.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        add_bus();
+        ShowSpeedLineChart();
+        //隐藏车辆状态模块
+        $("#block").fadeToggle(300);
+    });
+</script>
 </html>
