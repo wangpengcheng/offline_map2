@@ -224,8 +224,11 @@ var BMapLib = window.BMapLib = BMapLib || {}; (function() {
         if (!e) {//空则返回
             return
         }else {
-
-        //共用了一块内存
+            /*
+            * 2018-10-5 19:07
+            * 王鹏程
+            * 主要更改函数对象，js深拷贝，解决多辆汽车共显示landmarkPois共享问题
+            * */
         for (var f in e) {//遍历输入参数
             if (e.hasOwnProperty(f)) {  //判断e中是否有f(path)对象
                //将e中设置参数深拷贝到_opts中e[f]

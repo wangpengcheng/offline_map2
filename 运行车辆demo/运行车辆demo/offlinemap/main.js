@@ -2,7 +2,15 @@
 var map = new BMap.Map("map");    // 创建Map实例
 //map.setCurrentCity("成都");          // 设置地图中心显示的城市 new！
 map.enableScrollWheelZoom(false);     //开启鼠标滚轮缩放
-map.addControl(new BMap.NavigationControl());   //缩放按钮
+//map.addControl(new BMap.NavigationControl());   //开启可视化控件
+/*
+* 启用键盘操作，默认禁用。
+* 键盘的上、下、左、右键可连续移动地图。
+* 同时按下其中两个键可使地图进行对角移动。
+* PgUp、PgDn、Home和End键会使地图平移其1/2的大小。
+* +、-键会使地图放大或缩小一级
+* */
+map.enableKeyboard(false);//启用键盘操作
 // map.addControl(new BMap.MapTypeControl( {mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]} ));   //添加地图类型控件 离线只支持普通、卫星地图; 三维不支持
 layer.msg('<h1>欢迎使用地图监控</h1>');
 //设置中心点
