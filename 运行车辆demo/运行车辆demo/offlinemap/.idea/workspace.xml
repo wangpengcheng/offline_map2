@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a116285d-93dd-4dbf-8212-db70a9ef6d0d" name="默认的" comment="添加车辆状态显示模块">
-      <change beforePath="" afterPath="$PROJECT_DIR$/map2.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/voide_show.js" />
+    <list default="true" id="a116285d-93dd-4dbf-8212-db70a9ef6d0d" name="默认的" comment="添加车辆视频监看；使用videojs实现演示视屏播放；下一部目的。选用前端框架，将各个部分整合，调整整体布局">
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/video-js.min.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
-      <change beforePath="$PROJECT_DIR$/main_chart.js" afterPath="$PROJECT_DIR$/main_chart.js" />
       <change beforePath="$PROJECT_DIR$/map.html" afterPath="$PROJECT_DIR$/map.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,13 +35,13 @@
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
-              <caret line="352" column="29" lean-forward="true" selection-start-line="352" selection-start-column="29" selection-end-line="352" selection-end-column="29" />
+              <caret line="352" column="29" lean-forward="false" selection-start-line="352" selection-start-column="29" selection-end-line="352" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="voide_show.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="voide_show.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/voide_show.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -66,15 +61,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="map.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1120">
-              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            <state relative-caret-position="183">
+              <caret line="176" column="40" lean-forward="false" selection-start-line="176" selection-start-column="40" selection-end-line="176" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/jq22jQueryVideo.js7.1.07514201807161137/vide7.1.0/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="video-js.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/video-js.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="htmleaf-demo.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/htmleaf-demo.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,19 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vue.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/vue.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1535021796214" expanded="true" signature="226752:226761" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -126,10 +138,13 @@
       <find>dom</find>
       <find>option</find>
       <find>39.93</find>
+      <find>-10deg</find>
+      <find>-10</find>
     </findStrings>
     <replaceStrings>
       <replace>speed_chart_dom</replace>
       <replace>speed_cahart_option</replace>
+      <replace>0</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -165,8 +180,9 @@
         <option value="$PROJECT_DIR$/map2.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/main.js" />
-        <option value="$PROJECT_DIR$/map.html" />
         <option value="$PROJECT_DIR$/main_chart.js" />
+        <option value="$PROJECT_DIR$/css/video-js.min.css" />
+        <option value="$PROJECT_DIR$/map.html" />
       </list>
     </option>
   </component>
@@ -259,6 +275,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\GitHub\offline_map2\运行车辆demo\运行车辆demo\offlinemap\css" />
       <recent name="F:\GitHub\offline_map2\运行车辆demo\运行车辆demo\offlinemap" />
       <recent name="F:\离线地图\运行车辆demo\运行车辆demo\offlinemap\js" />
     </key>
@@ -317,18 +334,26 @@
       <workItem from="1538692700136" duration="1561000" />
       <workItem from="1538695222272" duration="4268000" />
       <workItem from="1538878203018" duration="18885000" />
-      <workItem from="1538910607902" duration="3404000" />
+      <workItem from="1538910607902" duration="8252000" />
     </task>
+    <task id="LOCAL-00001" summary="添加车辆状态显示模块">
+      <created>1538914421690</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1538914421690</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123760000" />
+    <option name="totallyTimeSpent" value="128608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12065332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23445733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -381,7 +406,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加车辆状态显示模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加车辆状态显示模块" />
+    <MESSAGE value="添加车辆视频监看；使用videojs实现演示视屏播放；下一部目的。选用前端框架，将各个部分整合，调整整体布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加车辆视频监看；使用videojs实现演示视屏播放；下一部目的。选用前端框架，将各个部分整合，调整整体布局" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -390,21 +416,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/echarts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403860">
-          <caret line="20193" column="4" lean-forward="false" selection-start-line="20193" selection-start-column="4" selection-end-line="20193" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/js/npm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/js/vuetest.vue" />
     <entry file="file://$PROJECT_DIR$/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
@@ -625,7 +636,7 @@
         <state relative-caret-position="140">
           <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <marker date="1535021796214" expanded="true" signature="226752:226761" ph="..." />
           </folding>
         </state>
@@ -698,17 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1120">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main_chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-195">
@@ -720,7 +720,7 @@
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
-          <caret line="352" column="29" lean-forward="true" selection-start-line="352" selection-start-column="29" selection-end-line="352" selection-end-column="29" />
+          <caret line="352" column="29" lean-forward="false" selection-start-line="352" selection-start-column="29" selection-end-line="352" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -730,6 +730,41 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/jq22jQueryVideo.js7.1.07514201807161137/vide7.1.0/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/video-js.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/htmleaf-demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="176" column="40" lean-forward="false" selection-start-line="176" selection-start-column="40" selection-end-line="176" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
