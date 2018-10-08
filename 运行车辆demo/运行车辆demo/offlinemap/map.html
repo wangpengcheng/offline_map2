@@ -121,7 +121,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            /*background: url("http://img.hb.aicdn.com/3f8e4597fdfba9da223f56301bc59a22692d972b112463-N0jS1j_fw658") no-repeat;*/
+            background: url("http://img.hb.aicdn.com/3f8e4597fdfba9da223f56301bc59a22692d972b112463-N0jS1j_fw658") no-repeat;
             background-size:cover;
             background-blend-mode: screen;
             width: 100%;
@@ -168,11 +168,13 @@
     <!--<div id="speed_table"style="overflow: hidden;left: 0%;padding: 0px;margin: 0px;border-width: 0px;cursor: default;bottom: 0%;"></div>-->
 </div>
 <!--视屏播放和显示模块-->
-<div id="voide">
+<!--<div id="voide">
     <div class="main-cons">
         <div class="container">
             <div class="item">
-                <div class="m">
+                <div class="card">
+                </div>
+                &lt;!&ndash;<div class="m">
                     <video id="my-video" class="video-js" controls preload="auto"
                            poster="m.jpg" data-setup="{}">
                         <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
@@ -180,7 +182,7 @@
                         <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
                         <p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
                     </video>
-                </div>
+                </div>&ndash;&gt;
             </div>
             <div class="item">
                 <div class="card">
@@ -196,10 +198,7 @@
             </div>
         </div>
     </div>
-</div>
-<video src="http://vjs.zencdn.net/v/oceans.mp4"  controls="controls">
-    Your browser does not support the video tag.
-</video>
+</div>-->
 <!--<div class="m">
     <video id="my-video" class="video-js" controls preload="auto" width="960" height="400"
            poster="m.jpg" data-setup="{}">
@@ -229,10 +228,10 @@
         //隐藏车辆状态模块
         $("#block").fadeToggle(300);
     });
-    var myPlayer = videojs('my-video');
+   /* var myPlayer = videojs('my-video');
     videojs("my-video").ready(function(){
         var myPlayer = this;
         // myPlayer.play();
-    });
+    });*/
 </script>
 </html>

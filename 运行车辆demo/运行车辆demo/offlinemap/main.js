@@ -111,11 +111,11 @@ bus_station_icon = new BMap.Icon("images/self_img/bus_station.png", new BMap.Siz
     imageSize:new BMap.Size(64,64)
 });
 //公交车iocn1、2
-run_bus_iocn =new BMap.Icon("images/self_img/6.png", new BMap.Size(128,128), {
+run_bus_iocn =new BMap.Icon("images/self_img/car_up1.png", new BMap.Size(128,128), {
     anchor:new BMap.Size(64,64),
     imageSize:new BMap.Size(128,128)
 });
-run_bus_iocn1=new BMap.Icon("images/self_img/6-1.png", new BMap.Size(128,128), {
+run_bus_iocn1=new BMap.Icon("images/self_img/car_up1.png", new BMap.Size(128,128), {
     anchor:new BMap.Size(64,64),
     imageSize:new BMap.Size(128,128)
 });
