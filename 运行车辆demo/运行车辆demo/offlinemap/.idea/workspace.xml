@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a116285d-93dd-4dbf-8212-db70a9ef6d0d" name="默认的" comment="">
+    <list default="true" id="a116285d-93dd-4dbf-8212-db70a9ef6d0d" name="默认的" comment="添加了示例视频展示">
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/htmleaf-demo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/video.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/videojs-ie8.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/zh-CN.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/video/project_video.mp4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/video/project_video_out.mp4" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/map.html" afterPath="$PROJECT_DIR$/map.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +25,7 @@
       <file leaf-file-name="heatmap.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/heatmap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18732">
+            <state relative-caret-position="0">
               <caret line="674" column="15" lean-forward="false" selection-start-line="674" selection-start-column="15" selection-end-line="674" selection-end-column="15" />
               <folding>
                 <marker date="1535336455534" expanded="true" signature="7047:7099" ph="..." />
@@ -60,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="185" column="22" lean-forward="true" selection-start-line="185" selection-start-column="22" selection-end-line="185" selection-end-column="22" />
+            <state relative-caret-position="396">
+              <caret line="211" column="38" lean-forward="false" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -76,8 +81,8 @@
       <file leaf-file-name="video.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/video.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="11" column="219" lean-forward="false" selection-start-line="11" selection-start-column="219" selection-end-line="11" selection-end-column="219" />
+            <state relative-caret-position="112">
+              <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -96,18 +101,18 @@
       <file leaf-file-name="video-js.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/video-js.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2296">
-              <caret line="82" column="22" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+            <state relative-caret-position="280">
+              <caret line="91" column="21" lean-forward="true" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="htmleaf-demo.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/htmleaf-demo.css">
+      <file leaf-file-name="zh-CN.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/zh-CN.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="336">
+              <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -180,9 +185,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/main_chart.js" />
         <option value="$PROJECT_DIR$/css/video-js.min.css" />
-        <option value="$PROJECT_DIR$/js/video.min.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/map.html" />
+        <option value="$PROJECT_DIR$/js/video.min.js" />
+        <option value="$PROJECT_DIR$/js/zh-CN.json" />
       </list>
     </option>
   </component>
@@ -246,6 +252,11 @@
             <path>
               <item name="offlinemap" type="b2602c69:ProjectViewProjectNode" />
               <item name="offlinemap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="offlinemap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="offlinemap" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="offlinemap" type="b2602c69:ProjectViewProjectNode" />
@@ -332,7 +343,7 @@
       <workItem from="1538910607902" duration="8345000" />
       <workItem from="1538963896534" duration="267000" />
       <workItem from="1538964547483" duration="1970000" />
-      <workItem from="1539480463455" duration="967000" />
+      <workItem from="1539480463455" duration="1378000" />
     </task>
     <task id="LOCAL-00001" summary="添加车辆状态显示模块">
       <created>1538914421690</created>
@@ -362,37 +373,45 @@
       <option name="project" value="LOCAL" />
       <updated>1538969948185</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加了示例视频展示">
+      <created>1539481477122</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1539481477122</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131905000" />
+    <option name="totallyTimeSpent" value="132316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23445733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="检验" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29575893" sideWeight="0.5021075" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23445733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29608938" sideWeight="0.49789253" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29608938" sideWeight="0.49789253" order="12" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -426,7 +445,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加车辆状态显示模块" />
     <MESSAGE value="添加车辆视频监看；使用videojs实现演示视屏播放；下一部目的。选用前端框架，将各个部分整合，调整整体布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加车辆视频监看；使用videojs实现演示视屏播放；下一部目的。选用前端框架，将各个部分整合，调整整体布局" />
+    <MESSAGE value="添加了示例视频展示" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了示例视频展示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -435,13 +455,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Think.text">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -686,7 +699,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/heatmap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18732">
+        <state relative-caret-position="0">
           <caret line="674" column="15" lean-forward="false" selection-start-line="674" selection-start-column="15" selection-end-line="674" selection-end-column="15" />
           <folding>
             <marker date="1535336455534" expanded="true" signature="7047:7099" ph="..." />
@@ -727,30 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/jq22jQueryVideo.js7.1.07514201807161137/vide7.1.0/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/video-js.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2296">
-          <caret line="82" column="22" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/htmleaf-demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3248">
@@ -759,22 +748,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/video.min.js">
+    <entry file="file://$PROJECT_DIR$/css/htmleaf-demo.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
-          <caret line="11" column="219" lean-forward="false" selection-start-line="11" selection-start-column="219" selection-end-line="11" selection-end-column="219" />
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/video-js.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="91" column="21" lean-forward="true" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/video.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/jq22jQueryVideo.js7.1.07514201807161137/vide7.1.0/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="185" column="22" lean-forward="true" selection-start-line="185" selection-start-column="22" selection-end-line="185" selection-end-column="22" />
+        <state relative-caret-position="396">
+          <caret line="211" column="38" lean-forward="false" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/zh-CN.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
